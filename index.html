@@ -66,6 +66,7 @@
 
     @media (max-width: 1200px) {
       .grid, .services { grid-template-columns: 1fr 1fr; }
+      #guarantees .grid, #why .grid, #reviews .grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 900px) {
@@ -74,6 +75,7 @@
       .row { grid-template-columns: 1fr; }
       .cta { display:none; }
       .menu-toggle { display:inline-flex; }
+      #guarantees .grid, #why .grid, #reviews .grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 700px) {
@@ -110,6 +112,10 @@
       </div>
       <nav id="mobile-menu" class="mobile-menu" hidden>
         <div class="menu-list">
+          <a href="#about">Про нас</a>
+          <a href="#why">Чому обирають нас</a>
+          <a href="#guarantees">Гарантії</a>
+          <a href="#reviews">Відгуки</a>
           <a href="#services">Послуги</a>
           <a href="#how">Як це працює</a>
           <a class="primary" href="#form">Замовити</a>
@@ -178,6 +184,61 @@
           <button class="btn primary" type="submit">Залишити заявку</button>
           <div id="form-status" class="hint"></div>
         </form>
+      </div>
+    </section>
+
+    <section id="about" class="card" style="margin-top:16px;">
+      <h3 style="margin-top:0;">Про нас</h3>
+      <p class="muted">Ми — команда майстрів виїзної мийки, які цінують ваш час та авто. Працюємо акуратно, використовуємо сертифіковану хімію та мікрофібру. Приїжджаємо з власною водою й електрикою, тому сервіс доступний у дворі чи на парковці біля офісу.</p>
+      <ul class="features">
+        <li>5+ років досвіду у сфері детейлінгу</li>
+        <li>Орієнтація на безпеку покриття та плівок</li>
+        <li>Чесні ціни, без прихованих платежів</li>
+      </ul>
+    </section>
+
+    <section id="guarantees" class="card" style="margin-top:16px;">
+      <h3 style="margin-top:0;">Гарантії</h3>
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div>
+          <b>Акуратність</b>
+          <p class="muted">Працюємо за методиками детейлінгу: двовідерний метод, окремі ганчірки для різних зон.</p>
+        </div>
+        <div>
+          <b>Матеріали</b>
+          <p class="muted">Лише pH‑нейтральні засоби, безпечні для лаку, кераміки й плівок.</p>
+        </div>
+        <div>
+          <b>Результат</b>
+          <p class="muted">Якщо щось не так — безкоштовно виправимо протягом 24 годин.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="card" style="margin-top:16px;">
+      <h3 style="margin-top:0;">Чому обирають нас</h3>
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="step"><div class="badge">✓</div><div><b>Зручно</b><div class="muted">Приїдемо туди, де стоїть авто — дім, офіс, паркінг.</div></div></div>
+        <div class="step"><div class="badge">✓</div><div><b>Швидко</b><div class="muted">Базові послуги за 60–90 хвилин, без черг.</div></div></div>
+        <div class="step"><div class="badge">✓</div><div><b>Дбайливо</b><div class="muted">Без жорстких щіток і агресивної хімії.</div></div></div>
+      </div>
+    </section>
+
+    <section id="reviews" class="card" style="margin-top:16px;">
+      <h3 style="margin-top:0;">Відгуки клієнтів</h3>
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div>
+          <p>«Приїхали вчасно, все акуратно. Авто блищить!»</p>
+          <div class="muted">— Андрій</div>
+        </div>
+        <div>
+          <p>«Зручно, що не треба їхати на мийку. Рекомендую.»</p>
+          <div class="muted">— Олена</div>
+        </div>
+        <div>
+          <p>«Після хімчистки салон як новий. Дякую!»</p>
+          <div class="muted">— Микита</div>
+        </div>
       </div>
     </section>
 
