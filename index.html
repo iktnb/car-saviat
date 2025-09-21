@@ -9,11 +9,11 @@
   <meta property="og:description" content="Виїзна мийка авто біля вашого дому чи офісу. Швидко, дбайливо, з гарантією чистоти.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/og-image.jpg">
-  <meta name="theme-color" content="#111827">
+  <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="/favicon.ico">
   <style>
     :root {
-      --bg:#0b0f14; --card:#111827; --muted:#6b7280; --text:#e5e7eb; --accent:#22c55e; --accent-2:#16a34a; --danger:#ef4444;
+      --bg:#f8fafc; --card:#ffffff; --muted:#64748b; --text:#0f172a; --accent:#22c55e; --accent-2:#16a34a; --danger:#dc2626;
       --max: 1120px; --radius: 16px;
     }
     * { box-sizing: border-box; }
@@ -21,32 +21,39 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .container { max-width: var(--max); margin: 0 auto; padding: 20px; }
-    header { position: sticky; top:0; backdrop-filter: blur(8px); background: #0b0f14cc; border-bottom: 1px solid #1f2937; z-index: 10; }
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    header { position: sticky; top:0; backdrop-filter: blur(8px); background: #ffffffcc; border-bottom: 1px solid #e5e7eb; z-index: 10; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; position:relative; }
+    .nav-right { display:flex; align-items:center; gap:10px; }
     .brand { display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.3px; }
-    .logo { width:36px; height:36px; border-radius:8px; background: linear-gradient(135deg, #22c55e, #16a34a); display:grid; place-items:center; font-weight:800; color:#0b0f14; }
+    .logo { width:36px; height:36px; border-radius:8px; background: linear-gradient(135deg, #22c55e, #16a34a); display:grid; place-items:center; font-weight:800; color:#ffffff; }
     .cta { display:flex; gap:10px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:12px; border:1px solid #1f2937; background:#111827; color:var(--text); cursor:pointer; transition:.2s ease; font-weight:600; }
+    .menu-toggle { display:none; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; border:1px solid #e5e7eb; background:#ffffff; color:#0f172a; cursor:pointer; font-size:20px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:12px; border:1px solid #e5e7eb; background:#f3f4f6; color:var(--text); cursor:pointer; transition:.2s ease; font-weight:600; }
     .btn:hover { transform: translateY(-1px); }
-    .btn.primary { background: var(--accent); color:#0b0f14; border-color: transparent; }
+    .btn.primary { background: var(--accent); color:#ffffff; border-color: transparent; }
     .btn.primary:hover { background: var(--accent-2); }
     .btn.ghost { background: transparent; }
     .hero { display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; padding:36px 0; align-items:center; }
-    .card { background: var(--card); border:1px solid #1f2937; border-radius: var(--radius); padding: 20px; }
-    .pill { display:inline-block; padding:6px 10px; border-radius:999px; background:#0b0f14; border:1px solid #1f2937; color:var(--muted); font-size:12px; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: var(--radius); padding: 20px; box-shadow: 0 1px 2px rgba(16,24,40,.04); }
+    .pill { display:inline-block; padding:6px 10px; border-radius:999px; background:#ffffff; border:1px solid #e5e7eb; color:var(--muted); font-size:12px; }
     .title { font-size: clamp(28px, 3.5vw, 48px); line-height: 1.1; margin: 12px 0 8px; }
     .subtitle { color: var(--muted); font-size: 16px; }
     .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
     .steps { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top: 6px; }
     .step { display:flex; gap:12px; }
-    .badge { width:28px; height:28px; border-radius:8px; background:#0b0f14; border:1px solid #1f2937; display:grid; place-items:center; font-weight:700; color:var(--accent); }
+    .badge { width:28px; height:28px; border-radius:8px; background:#ffffff; border:1px solid #e5e7eb; display:grid; place-items:center; font-weight:700; color:var(--accent); }
     .muted { color: var(--muted); }
     .features { margin-top: 10px; }
     .features li { margin: 6px 0; }
+    .mobile-menu { position:absolute; top:100%; left:0; right:0; background:var(--card); border-bottom:1px solid #e5e7eb; box-shadow: 0 12px 24px rgba(16,24,40,.08); z-index:20; }
+    .mobile-menu[hidden] { display:none; }
+    .mobile-menu .menu-list { display:grid; gap:8px; padding:12px 20px; }
+    .mobile-menu .menu-list a { display:block; padding:12px 14px; border-radius:10px; border:1px solid #e5e7eb; background:#ffffff; color:var(--text); text-decoration:none; font-weight:600; text-align:center; }
+    .mobile-menu .menu-list a.primary { background: var(--accent); color:#ffffff; border-color: transparent; }
     form { display:grid; gap:12px; }
-    label { font-size:14px; color:#cbd5e1; }
+    label { font-size:14px; color:#475569; }
     input, textarea, select {
-      width: 100%; padding: 12px 14px; border-radius: 12px; border:1px solid #1f2937; background:#0b0f14; color:var(--text);
+      width: 100%; padding: 12px 14px; border-radius: 12px; border:1px solid #e5e7eb; background:#ffffff; color:var(--text);
       outline:none; transition:.15s ease; font-size:16px;
     }
     input:focus, textarea:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px #22c55e22; }
@@ -54,13 +61,24 @@
     .row { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
     .services { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
     .price { font-weight:800; font-size:18px; color: var(--accent); }
-    footer { margin: 32px 0 20px; padding-top: 20px; border-top: 1px solid #1f2937; color: var(--muted); font-size: 14px; }
-    .callout { background:linear-gradient(135deg,#111827,#0f172a); border:1px dashed #1f2937; }
+    footer { margin: 32px 0 20px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: var(--muted); font-size: 14px; }
+    .callout { background:linear-gradient(135deg,#f8fafc,#eef2ff); border:1px dashed #e5e7eb; }
+
+    @media (max-width: 1200px) {
+      .grid, .services { grid-template-columns: 1fr 1fr; }
+    }
 
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
       .grid, .steps, .services { grid-template-columns: 1fr; }
       .row { grid-template-columns: 1fr; }
+      .cta { display:none; }
+      .menu-toggle { display:inline-flex; }
+    }
+
+    @media (max-width: 700px) {
+      .container { padding: 16px; }
+      .btn { padding: 10px 14px; }
     }
   </style>
   <script type="application/ld+json">
@@ -81,12 +99,23 @@
   <header>
     <div class="container nav">
       <div class="brand"><div class="logo">M</div><div>Мийка на виїзд</div></div>
-      <div class="cta">
-        <a class="btn ghost" href="#services">Послуги</a>
-        <a class="btn ghost" href="#how">Як це працює</a>
-        <a class="btn primary" href="#form">Замовити</a>
-        <a class="btn" href="tel:+380XXXXXXXXX">Подзвонити</a>
+      <div class="nav-right">
+        <div class="cta">
+          <a class="btn ghost" href="#services">Послуги</a>
+          <a class="btn ghost" href="#how">Як це працює</a>
+          <a class="btn primary" href="#form">Замовити</a>
+          <a class="btn" href="tel:+380XXXXXXXXX">Подзвонити</a>
+        </div>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Меню" aria-expanded="false">☰</button>
       </div>
+      <nav id="mobile-menu" class="mobile-menu" hidden>
+        <div class="menu-list">
+          <a href="#services">Послуги</a>
+          <a href="#how">Як це працює</a>
+          <a class="primary" href="#form">Замовити</a>
+          <a href="tel:+380XXXXXXXXX">Подзвонити</a>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -327,6 +356,33 @@
     document.getElementById('full-form').addEventListener('submit', async (e)=>{
       e.preventDefault()
       handleSubmit(e.target, document.getElementById('full-status'))
+    })
+
+    // Мобільне меню
+    const menuToggle = document.getElementById('menu-toggle')
+    const mobileMenu = document.getElementById('mobile-menu')
+    function closeMenu(){
+      mobileMenu.hidden = true
+      menuToggle.setAttribute('aria-expanded','false')
+    }
+    function openMenu(){
+      mobileMenu.hidden = false
+      menuToggle.setAttribute('aria-expanded','true')
+    }
+    menuToggle.addEventListener('click', ()=>{
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true'
+      if (isOpen) closeMenu(); else openMenu()
+    })
+    document.addEventListener('click', (e)=>{
+      if (mobileMenu.hidden) return
+      const within = e.target.closest('#mobile-menu') || e.target.closest('#menu-toggle')
+      if (!within) closeMenu()
+    })
+    window.addEventListener('resize', ()=>{
+      if (window.innerWidth > 900) closeMenu()
+    })
+    mobileMenu.addEventListener('click', (e)=>{
+      if (e.target.tagName === 'A') closeMenu()
     })
   </script>
 </body>
