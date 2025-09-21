@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мийка на виїзд — швидко та акуратно</title>
+  <meta name="description" content="Виїзна мийка авто: без черг, біля вашого дому чи офісу. Швидко, дбайливо, з гарантією чистоти.">
+  <meta property="og:title" content="Мийка на виїзд">
+  <meta property="og:description" content="Виїзна мийка авто біля вашого дому чи офісу. Швидко, дбайливо, з гарантією чистоти.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/og-image.jpg">
+  <meta name="theme-color" content="#111827">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    :root {
+      --bg:#0b0f14; --card:#111827; --muted:#6b7280; --text:#e5e7eb; --accent:#22c55e; --accent-2:#16a34a; --danger:#ef4444;
+      --max: 1120px; --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Noto Sans', 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 20px; }
+    header { position: sticky; top:0; backdrop-filter: blur(8px); background: #0b0f14cc; border-bottom: 1px solid #1f2937; z-index: 10; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.3px; }
+    .logo { width:36px; height:36px; border-radius:8px; background: linear-gradient(135deg, #22c55e, #16a34a); display:grid; place-items:center; font-weight:800; color:#0b0f14; }
+    .cta { display:flex; gap:10px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:12px; border:1px solid #1f2937; background:#111827; color:var(--text); cursor:pointer; transition:.2s ease; font-weight:600; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary { background: var(--accent); color:#0b0f14; border-color: transparent; }
+    .btn.primary:hover { background: var(--accent-2); }
+    .btn.ghost { background: transparent; }
+    .hero { display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; padding:36px 0; align-items:center; }
+    .card { background: var(--card); border:1px solid #1f2937; border-radius: var(--radius); padding: 20px; }
+    .pill { display:inline-block; padding:6px 10px; border-radius:999px; background:#0b0f14; border:1px solid #1f2937; color:var(--muted); font-size:12px; }
+    .title { font-size: clamp(28px, 3.5vw, 48px); line-height: 1.1; margin: 12px 0 8px; }
+    .subtitle { color: var(--muted); font-size: 16px; }
+    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+    .steps { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top: 6px; }
+    .step { display:flex; gap:12px; }
+    .badge { width:28px; height:28px; border-radius:8px; background:#0b0f14; border:1px solid #1f2937; display:grid; place-items:center; font-weight:700; color:var(--accent); }
+    .muted { color: var(--muted); }
+    .features { margin-top: 10px; }
+    .features li { margin: 6px 0; }
+    form { display:grid; gap:12px; }
+    label { font-size:14px; color:#cbd5e1; }
+    input, textarea, select {
+      width: 100%; padding: 12px 14px; border-radius: 12px; border:1px solid #1f2937; background:#0b0f14; color:var(--text);
+      outline:none; transition:.15s ease; font-size:16px;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px #22c55e22; }
+    .hint { font-size:12px; color: var(--muted); }
+    .row { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    .services { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
+    .price { font-weight:800; font-size:18px; color: var(--accent); }
+    footer { margin: 32px 0 20px; padding-top: 20px; border-top: 1px solid #1f2937; color: var(--muted); font-size: 14px; }
+    .callout { background:linear-gradient(135deg,#111827,#0f172a); border:1px dashed #1f2937; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid, .steps, .services { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Мийка на виїзд",
+    "image": "/og-image.jpg",
+    "description": "Виїзна мийка авто біля дому та офісу",
+    "areaServed": "Ваше місто",
+    "telephone": "+380XXXXXXXXX",
+    "url": "https://example.com",
+    "priceRange": "UAH$$"
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo">M</div><div>Мийка на виїзд</div></div>
+      <div class="cta">
+        <a class="btn ghost" href="#services">Послуги</a>
+        <a class="btn ghost" href="#how">Як це працює</a>
+        <a class="btn primary" href="#form">Замовити</a>
+        <a class="btn" href="tel:+380XXXXXXXXX">Подзвонити</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="pill">Без черг • Без жорстких щіток по фарбі</span>
+        <h1 class="title">Чисте авто біля вашого дому за 60–90 хвилин</h1>
+        <p class="subtitle">Приїжджаємо самі, вода й електрика автономні. Дбайлива хімія, мікрофібра, матове й глянцеве покриття — без розводів.</p>
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="#form">Швидкий виклик майстра</a>
+          <a class="btn" href="https://maps.app.goo.gl/" target="_blank" rel="noopener">Зона виїзду</a>
+        </div>
+        <ul class="features">
+          <li>Працюємо щодня 08:00–21:00</li>
+          <li>Безпечно для покриття та плівок</li>
+          <li>Оплата: готівка, карта, переказ</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="margin:0 0 8px;">Швидкий розрахунок</h3>
+        <p class="muted" style="margin-top:0;">Вкажіть авто та адресу — передзвонимо за 5–10 хвилин.</p>
+        <form id="quick-form">
+          <div class="row">
+            <div>
+              <label for="name">Ім’я</label>
+              <input id="name" name="name" type="text" placeholder="Іван" required>
+            </div>
+            <div>
+              <label for="phone">Телефон</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" pattern="^[+0-9\-()\s]{10,}$" placeholder="+380 67 000 00 00" required>
+              <div class="hint">Ми не надсилаємо спам. Тільки для зв’язку щодо замовлення.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="car">Авто</label>
+              <input id="car" name="car" type="text" placeholder="Sedan / SUV / Pickup" required>
+            </div>
+            <div>
+              <label for="service">Послуга</label>
+              <select id="service" name="service" required>
+                <option value="">Оберіть...</option>
+                <option>Експрес-мийка</option>
+                <option>Класична мийка</option>
+                <option>Глибока мийка + салон</option>
+                <option>Хімчистка салону</option>
+                <option>Детейлінг пакет</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="address">Адреса</label>
+            <input id="address" name="address" type="text" placeholder="Вулиця, будинок, район" required>
+          </div>
+          <div>
+            <label for="comment">Коментар</label>
+            <textarea id="comment" name="comment" rows="3" placeholder="Зручний час, побажання"></textarea>
+          </div>
+          <button class="btn primary" type="submit">Залишити заявку</button>
+          <div id="form-status" class="hint"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="services" class="grid">
+      <div class="card">
+        <h3>Експрес-мийка</h3>
+        <p class="muted">Кузов, скло, швидке висушування. Для підтримання чистоти.</p>
+        <div class="price">від 350 ₴</div>
+      </div>
+      <div class="card">
+        <h3>Класична мийка</h3>
+        <p class="muted">Ретельна мийка кузова, арки, чорнення гуми.</p>
+        <div class="price">від 500 ₴</div>
+      </div>
+      <div class="card">
+        <h3>Глибока + салон</h3>
+        <p class="muted">Кузов, прорізи, пилосос, пластик, вікна зсередини.</p>
+        <div class="price">від 900 ₴</div>
+      </div>
+    </section>
+
+    <section id="how" class="card" style="margin-top:16px;">
+      <h3 style="margin-top:0;">Як це працює</h3>
+      <div class="steps">
+        <div class="step"><div class="badge">1</div><div><b>Заявка</b><div class="muted">Залишаєте контакти та адресу.</div></div></div>
+        <div class="step"><div class="badge">2</div><div><b>Підтвердження</b><div class="muted">Уточнюємо деталі та час.</div></div></div>
+        <div class="step"><div class="badge">3</div><div><b>Мийка на місці</b><div class="muted">Приїжджаємо та наводимо лад.</div></div></div>
+      </div>
+      <div class="callout card" style="margin-top:12px;">
+        <b>Дбайливо до покриття:</b> pH‑нейтральна хімія, мікрофібра, двовідерний метод, без «кіл».
+      </div>
+    </section>
+
+    <section id="form" class="card" style="margin-top:16px;">
+      <h3 style="margin-top:0;">Залишити заявку</h3>
+      <p class="muted" style="margin-top:-6px">Передзвонимо протягом 10 хвилин у робочий час.</p>
+      <form id="full-form">
+        <div class="row">
+          <div>
+            <label for="f-name">Ім’я</label>
+            <input id="f-name" name="name" type="text" required>
+          </div>
+          <div>
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" pattern="^[+0-9\-()\s]{10,}$" required>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="f-car">Авто</label>
+            <input id="f-car" name="car" type="text" required>
+          </div>
+          <div>
+            <label for="f-time">Час</label>
+            <input id="f-time" name="time" type="text" placeholder="Сьогодні 18:00 / Завтра ранок">
+          </div>
+        </div>
+        <div>
+          <label for="f-address">Адреса</label>
+          <input id="f-address" name="address" type="text" required>
+        </div>
+        <div>
+          <label for="f-comment">Коментар</label>
+          <textarea id="f-comment" name="comment" rows="3"></textarea>
+        </div>
+        <div class="row">
+          <label style="display:flex; gap:10px; align-items:center;">
+            <input type="checkbox" id="consent" required style="width:18px; height:18px;"> 
+            <span>Погоджуюсь на обробку персональних даних</span>
+          </label>
+        </div>
+        <button class="btn primary" type="submit">Відправити</button>
+        <div id="full-status" class="hint"></div>
+      </form>
+    </section>
+
+    <section class="card" style="margin-top:16px;">
+      <h3 style="margin-top:0;">Контакти</h3>
+      <p><b>Телефон:</b> <a href="tel:+380XXXXXXXXX">+380 XX XXX XX XX</a></p>
+      <p><b>Telegram:</b> <a href="https://t.me/your_username" target="_blank" rel="noopener">@your_username</a></p>
+      <p><b>Графік:</b> 08:00–21:00 без вихідних</p>
+      <p class="muted">Працюємо в межах: Ваше місто та область</p>
+    </section>
+
+    <footer>
+      <div class="container" style="padding:0;">
+        <div>© <span id="y"></span> Мийка на виїзд. Усі права захищені.</div>
+        <div class="muted">Політика конфіденційності • Публічна оферта</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Поточний рік у футері
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Варіант 1: Надсилання через Formspree (без бекенду)
+    // 1) Створіть проєкт на formspree.io, отримайте endpoint виду https://formspree.io/f/xxxxxxx
+    // 2) Вкажіть URL у змінній FORMSPREE_ENDPOINT
+    const FORMSPREE_ENDPOINT = '' // <-- вставте свій endpoint, якщо використовуєте Formspree
+
+    async function sendViaFormspree(data) {
+      if (!FORMSPREE_ENDPOINT) return { ok:false, message:'Endpoint Formspree не заданий' }
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Accept':'application/json' },
+          body: data
+        });
+        if (res.ok) return { ok:true }
+        const json = await res.json().catch(()=>({}))
+        return { ok:false, message: json.errors?.[0]?.message || 'Помилка надсилання' }
+      } catch (e) {
+        return { ok:false, message: 'Мережа недоступна' }
+      }
+    }
+
+    // Варіант 2: Надсилання в Telegram‑бота (потрібні ваш токен і chat_id)
+    // Безпечніше проксувати через свій сервер, але для старту можна так.
+    const TG_BOT_TOKEN = '' // '123456789:ABC...'
+    const TG_CHAT_ID = '' // ваш user id або id групи
+
+    async function sendToTelegram(payload) {
+      if (!TG_BOT_TOKEN || !TG_CHAT_ID) return { ok:false, message:'Telegram токен або chat_id не задані' }
+      const text = Object.entries(payload).map(([k,v])=>`<b>${k}</b>: ${String(v).replace(/</g,'&lt;')}`).join('%0A')
+      try {
+        const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage?chat_id=${encodeURIComponent(TG_CHAT_ID)}&parse_mode=HTML&text=${text}`
+        const res = await fetch(url)
+        if (!res.ok) return { ok:false, message:'Помилка Telegram' }
+        return { ok:true }
+      } catch(e) {
+        return { ok:false, message:'Мережа недоступна' }
+      }
+    }
+
+    function collectForm(form) {
+      const data = new FormData(form)
+      const obj = {}
+      data.forEach((v,k)=>{ obj[k]=v })
+      return { formData: data, object: obj }
+    }
+
+    async function handleSubmit(form, statusEl) {
+      statusEl.textContent = ''
+      const { formData, object } = collectForm(form)
+
+      // Міні‑валідація телефону
+      const phone = (object.phone||'').replace(/\D/g,'')
+      if (phone.length < 10) {
+        statusEl.textContent = 'Введіть коректний телефон'
+        statusEl.style.color = 'var(--danger)'
+        return
+      }
+
+      // Пробуємо через Formspree, якщо заданий endpoint. Інакше Telegram. Інакше помилка.
+      let sent = { ok:false, message:'' }
+      if (FORMSPREE_ENDPOINT) sent = await sendViaFormspree(formData)
+      else if (TG_BOT_TOKEN && TG_CHAT_ID) sent = await sendToTelegram(object)
+      else sent = { ok:false, message:'Не налаштовано спосіб надсилання форми' }
+
+      if (sent.ok) {
+        statusEl.textContent = 'Заявку відправлено! Передзвонимо найближчим часом.'
+        statusEl.style.color = 'var(--accent)'
+        form.reset()
+      } else {
+        statusEl.textContent = sent.message || 'Помилка відправки. Зв’яжіться телефоном.'
+        statusEl.style.color = 'var(--danger)'
+      }
+    }
+
+    document.getElementById('quick-form').addEventListener('submit', async (e)=>{
+      e.preventDefault()
+      handleSubmit(e.target, document.getElementById('form-status'))
+    })
+
+    document.getElementById('full-form').addEventListener('submit', async (e)=>{
+      e.preventDefault()
+      handleSubmit(e.target, document.getElementById('full-status'))
+    })
+  </script>
+</body>
+</html>
